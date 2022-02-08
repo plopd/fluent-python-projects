@@ -18,3 +18,11 @@ beyond_ascii = [ord(s) for s in symbols if ord(s) > 127]
 print(beyond_ascii) # [162, 163, 165, 8364, 164]
 beyond_ascii = list(filter(lambda c: c > 127, map(ord, symbols)))
 print(beyond_ascii) # [162, 163, 165, 8364, 164]
+
+## Cartesian Products
+## Example 2-4. Cartesian product using a list comprehension
+colors = ['black', 'white']
+sizes = ['S', 'M', 'L']
+tshirts = [(color, size) for color in colors 
+                            for size in sizes]
+print(tshirts) # [('black', 'S'), ('black', 'M'), ('black', 'L'), ('white', 'S'), ('white', 'M'), ('white', 'L')]
