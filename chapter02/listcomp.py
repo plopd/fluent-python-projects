@@ -3,13 +3,13 @@
 """
 
 ## Listcomps No Longer Leak Their Variables
-
 x = "ABC"
 # Variables in the surrounding scope can still be referenced
 dummy = [ord(x) for x in x]
 # The x inside the listcomp does not mask the x in the surrounding scope
 print(x) # ABC
 print(dummy)  # [65, 66, 67]
+
 
 ## Listcomps Versus map and filter
 ## Example 2-3. The same list built by a listcomp and a map/filter composition
@@ -19,6 +19,7 @@ print(beyond_ascii) # [162, 163, 165, 8364, 164]
 beyond_ascii = list(filter(lambda c: c > 127, map(ord, symbols)))
 print(beyond_ascii) # [162, 163, 165, 8364, 164]
 
+
 ## Cartesian Products
 ## Example 2-4. Cartesian product using a list comprehension
 colors = ['black', 'white']
@@ -26,3 +27,11 @@ sizes = ['S', 'M', 'L']
 tshirts = [(color, size) for color in colors 
                             for size in sizes]
 print(tshirts) # [('black', 'S'), ('black', 'M'), ('black', 'L'), ('white', 'S'), ('white', 'M'), ('white', 'L')]
+
+
+## Generator Expressions
+## Example 2-5 shows basic usage of genexps to build a tuple and an array
+symbols = '$¢£¥€¤'
+print(tuple(ord(symbol) for symbol in symbols))  # (36, 162, 163, 165, 8364, 164)
+import array
+print(array.array('I', (ord(symbol) for symbol in symbols)))  # array('I', [36, 162, 163, 165, 8364, 164])
