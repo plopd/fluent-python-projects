@@ -35,3 +35,20 @@ symbols = '$¢£¥€¤'
 print(tuple(ord(symbol) for symbol in symbols))  # (36, 162, 163, 165, 8364, 164)
 import array
 print(array.array('I', (ord(symbol) for symbol in symbols)))  # array('I', [36, 162, 163, 165, 8364, 164])
+
+# Example 2-6. Cartesian product in a generator expression
+colors = ['black', 'white']
+sizes = ['S', 'M', 'L']
+for tshirt in ('%s %s' % (c, s) for c in colors for s in sizes):
+    print(tshirt)
+
+# Example 2-7 Tuple as Records
+lax_coordinates = (33.9425, -118.408056)
+city, year, pop, chg, area = ('Tokyo', 2003, 32450, 0.66, 8014)
+travel_ids = [('USA', '31195855'), ('BRA', 'CE342567'), ('ESP', 'XDA205856')]
+
+for passport in sorted(travel_ids):
+    print('%s/%s' % passport)
+
+for country, _ in travel_ids:
+    print(country)
