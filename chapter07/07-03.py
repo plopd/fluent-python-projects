@@ -1,3 +1,22 @@
+"""
+    Modified
+    Source: “Fluent Python by Luciano Ramalho (O’Reilly). Copyright 2015 Luciano Ramalho, 978-1-491-94600-8.”
+
+    Example 7-3. The promos list is filled by the promotion decorator
+"""
+
+promos = []
+
+def promotion(promo_func):
+    """Promotion decorator adds new `promo_func` to promotion list,
+        then it returns the `promo_fun` unchanged.
+        With this decorator, we avoid the mistake 
+        of adding a new promotional strategy function without also adding it
+        to the promotion list.
+    """
+    promos.append(promo_func)
+    return promo_func
+
 @promotion
 def fidelity(order):
     """5% discount for customers with 1000 or more fidelity points"""
