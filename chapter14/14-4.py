@@ -1,4 +1,8 @@
-# Example 14-4. sentence_iter.py: Sentence implemented using the Iterator pattern
+"""
+    Modified
+    Source: “Fluent Python by Luciano Ramalho (O’Reilly). Copyright 2015 Luciano Ramalho, 978-1-491-94600-8.”
+"""
+# Example 15-4. sentence_iter.py: Sentence implemented using the Iterator pattern
 import re
 import reprlib
 

@@ -1,3 +1,7 @@
+"""
+    Modified
+    Source: “Fluent Python by Luciano Ramalho (O’Reilly). Copyright 2015 Luciano Ramalho, 978-1-491-94600-8.”
+"""
 # Example 14-1 shows a Sentence class that extracts words from a text by index.
 
 import re

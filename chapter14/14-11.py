@@ -1,8 +1,11 @@
 """
-Example 14-11. The Arithmetic Progression class.
+    Modified
+    Source: “Fluent Python by Luciano Ramalho (O’Reilly). Copyright 2015 Luciano Ramalho, 978-1-491-94600-8.”
 """
 
 """
+Example 14-11. The Arithmetic Progression class.
+
     The Iterator pattern allows for traversal of a data structure.
 But the same interface can be used to fetch the next item in a series,
 produced on the fly (e.g., the `range` built-in).
