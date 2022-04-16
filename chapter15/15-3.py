@@ -38,3 +38,12 @@ if __name__ == "__main__":
     print(manager)
     manager.__exit__(None, None, None)
     print(monster)  # Back to normal
+
+    # Example of using contextlib.redirect_stdout
+    # Pass it a file-like object and it redirects stdout there.
+    import contextlib
+
+    with open("foo.txt", "w") as f:
+        with contextlib.redirect_stdout(f):
+            help(pow)
+            print("bar")
